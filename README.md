@@ -27,5 +27,10 @@ atc-dex/
 └── tests/
 ```
 
+
+## Abhängigkeiten
+- [`A-TownChain-Okosystems/atc-blockchain`](https://github.com/A-TownChain-Okosystems/atc-blockchain)
+- [`A-TownChain-Okosystems/atc-assets`](https://github.com/A-TownChain-Okosystems/atc-assets)
+
 ## Copyright
 Copyright © Michael Wroblewski / A-TownChain-Okosystems. All Rights Reserved.
