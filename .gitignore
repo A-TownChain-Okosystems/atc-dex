@@ -1,12 +1,5 @@
-# ATCLang build & temp files
-*.atc.compiled
-*.log
-.build/
+node_modules/
 dist/
-tmp/
-
-# OS / Editor files
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+*.js
+*.d.ts
+!jest.config.js
