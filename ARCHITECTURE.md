@@ -1,50 +1,45 @@
-# Architecture Specification — atc-dex
+# ARCHITECTURE.md — atc-dex
+> Copyright © Michael Wroblewski / A-TownChain-Okosystems. All Rights Reserved.
 
-## Overview
-`atc-dex` is designed as a core module in **L3 — DeFi** of the A-TownChain architecture.
-
-## Repository Metadata
-- **Repository Name**: `atc-dex`
-- **Title**: Decentralized Exchange Engine
-- **Layer**: L3 — DeFi
-- **Sprint**: 2.5
-- **ATC Standard**: ATC-88
-- **Primary Specification**: Decentralized Exchange — AMM, Liquidity Pools, Swap, Price Oracle
-
-## Directory Structure
-
-```text
-atc-dex/
+## File Tree
+```tree
+├── .gitignore
+├── CHANGELOG.md
+├── COMPONENT_PLAN.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+├── STATUS.md
 ├── amm/
 │   └── amm.atc
-├── pool/
-│   └── pool_manager.atc
-├── swap/
-│   └── swap_router.atc
+├── contracts/
+├── fees/
+│   └── dex_fees.atc
+├── frontend/
+│   └── src/
 ├── oracle/
 │   └── price_oracle.atc
 ├── orders/
 │   └── limit_orders.atc
-├── fees/
-│   └── dex_fees.atc
-├── README.md
-├── ARCHITECTURE.md
-├── COMPONENT_PLAN.md
-├── FILE_REGISTER.md
-├── STATUS.md
-├── ROADMAP.md
-├── CHANGELOG.md
-├── .gitignore
-└── LICENSE
+├── package.json
+├── pool/
+│   └── pool_manager.atc
+├── src/
+│   └── index.ts
+├── swap/
+│   └── swap_router.atc
+└── tsconfig.json
 ```
 
-## Component Architecture Table
+## Module Descriptions
+- **contracts/**: Smart contracts for Automated Market Maker (AMM) pools, liquidity providers, fee routers, and limit orders.
+- **frontend/src/**: Trading interface web frontend built with React/TypeScript, providing swap UI and liquidity dashboards.
+- **amm/**, **fees/**, **oracle/**, **orders/**, **pool/**, **swap/**: DEX sub-components managing price calculation, swap execution, fee distribution, and price oracle updates.
+- **package.json** & **tsconfig.json**: Dependency specifications and TypeScript compiler configuration.
 
-| Directory | File | Module Name | Primary Responsibility |
-| --- | --- | --- | --- |
-| `amm/` | `amm.atc` | `amm` | Automated Market Maker — Constant product, liquidity pools, swap |
-| `pool/` | `pool_manager.atc` | `pool_manager` | Liquidity Pool Management — Create, add/remove liquidity |
-| `swap/` | `swap_router.atc` | `swap_router` | Swap Router — Best route across pools, multi-hop |
-| `oracle/` | `price_oracle.atc` | `price_oracle` | Price Oracle — TWAP, spot price, manipulation resistance |
-| `orders/` | `limit_orders.atc` | `limit_orders` | Limit Orders — On-chain order book, fill logic |
-| `fees/` | `dex_fees.atc` | `dex_fees` | DEX Fees — Swap fee, protocol fee, LP rewards distribution |
+## Build System
+Hardhat / Foundry for contract compilation & unit tests; Vite / Node.js for frontend web compilation.
+
+## Dependencies
+TypeScript, Ethers.js / Viem, React, Hardhat, OpenZeppelin Contracts, Tailwind CSS.
