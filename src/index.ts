@@ -1,7 +1,6 @@
-/**
- * atc-dex — A-TownChain-Okosystems
- * Copyright (c) Michael Wroblewski. All Rights Reserved.
- */
-
-export const VERSION = "0.1.0";
-export const AUTHOR = "Michael Wroblewski";
+// atc-dex — Decentralized exchange (ATC-06)
+export { Orderbook } from './orderbook';
+export { OrderMatcher } from './matcher';
+export { LiquidityPool } from './pool';
+export { Settlement } from './settlement';
+export { FeeCalculator } from './fees';
